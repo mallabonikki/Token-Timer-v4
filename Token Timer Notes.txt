@@ -1,0 +1,6 @@
+Token Timer Notes
+
+1. service1, administrator start=deny, rent start/stop=grant.
+	-make it hard code in the token timer v3 app.
+	-use sc.exe to uninstall service, restart.
+093B0
