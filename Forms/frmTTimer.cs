@@ -210,6 +210,16 @@ namespace TokenTimerV4
                     lblMin.Text = Convert.ToString(Convert.ToInt32(lblMin.Text) - 1);
                     infinitePassword = 0;
 
+                    //copy TokenTimer.accdb to drive C:
+                    string dbPath= "\\\\PC-99\\e$\\TokenData\\" + System.Environment.MachineName;
+                    if (File.Exists(dbPath + "\\TokenTimer.accdb"))
+                    {
+                        string sourceFile = Path.Combine(dbPath, "TokenTimer.accdb");
+                        string destFile = Path.Combine("C:\\Norton2", "TokenTimer.accdb");
+                        File.Copy(sourceFile, destFile, true);
+                    }
+
+
                     //Update Time And OutDate Last Row Every Minutes-----
                     connection = new TheConnection();
                     Time time = new Time();
